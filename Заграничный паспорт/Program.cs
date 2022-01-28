@@ -12,6 +12,7 @@ namespace Заграничный_паспорт
         {
             string FIO, date;
             int serial = 0;
+            int leng = 10;
             Console.WriteLine("Введите ФИО:");
             FIO = Console.ReadLine();
             Console.WriteLine("Введите серию:");
@@ -22,7 +23,7 @@ namespace Заграничный_паспорт
             Foreign_passport name = new Foreign_passport(FIO,serial,date);
             try
             {
-                if (date.Length > 8)
+                if (date.Length > leng)
                 {
                     throw new Exception("Длина больше 8 символов"); 
                 }
@@ -31,10 +32,11 @@ namespace Заграничный_паспорт
             {
                 Console.WriteLine("Вели не корректную дату выдачи");
             }
-            finally
-            {
-                Console.WriteLine("Повторите попытку ввода");
-            }
+            //finally
+            //{
+            //    Console.WriteLine("Повторите попытку ввода");  несовсем понял как работает и зачем нужен 
+               
+            //}
            
             name.Print();
             
