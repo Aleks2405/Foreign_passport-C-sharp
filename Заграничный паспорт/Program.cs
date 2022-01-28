@@ -22,12 +22,18 @@ namespace Заграничный_паспорт
             Foreign_passport name = new Foreign_passport(FIO,serial,date);
             try
             {
-                //serial = Int32.Parse(Console.ReadLine());
-                serial = 0;
+                if (date.Length > 8)
+                {
+                    throw new Exception("Длина больше 8 символов"); 
+                }
             }
-            catch 
+            catch(Exception ex) 
             {
-                Console.WriteLine("Вы не правильно ввели серию паспорта");
+                Console.WriteLine("Вели не корректную дату выдачи");
+            }
+            finally
+            {
+                Console.WriteLine("Повторите попытку ввода");
             }
            
             name.Print();
